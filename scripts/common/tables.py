@@ -1,5 +1,5 @@
 import common.base as base
-from sqlalchemy import Integer, String, Float, Boolean, Date
+from sqlalchemy import Integer, String, Float, Boolean, Date, DateTime
 from sqlalchemy.orm import mapped_column
 
 class User(base.Base):
@@ -23,4 +23,4 @@ class User(base.Base):
     timezone =mapped_column(String(32))
     isp_name = mapped_column(String(128))
     updated = mapped_column(Boolean)        # If set to True, the record was updated
-    
+    migrated_at = mapped_column(DateTime)

@@ -101,6 +101,7 @@ class User(base.Base):
     timezone =mapped_column(String(32))
     isp_name = mapped_column(String(128))
     updated = mapped_column(Boolean)        # If set to True, the record was updated
+    migrated_at = mapped_column(DateTime)
 ```
 
 In order to check for existing entries, the `email` field is used to query the database during the Transform phase. This allows the ETL to run more than once or restart in case of failure without duplicating entries.

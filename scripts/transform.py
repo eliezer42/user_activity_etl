@@ -82,7 +82,7 @@ def main(extracted_df:pd.DataFrame) -> pd.DataFrame:
         enriched_df = pd.merge(df,ip_geolocation_df, how='left', on='ip_address')
 
         # Finally we set the updated_at field with current datetime, indicating when was the last time it was updated in the database
-        enriched_df['updated_at'] = datetime.datetime.utcnow()
+        enriched_df['migrated_at'] = datetime.datetime.utcnow()
 
         logging.info('Data transformation finished', extra={'step': 'Transform'})
 
