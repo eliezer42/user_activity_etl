@@ -17,8 +17,8 @@ These ETL project is enabled for handling csv files either stored locally or rem
 In order to test S3 data retrieving functionality, I have set up a bucket with publicly available files.
 
 ```
-python ./scripts/etl.py --source ./input/ --chunksize 1000
 python ./scripts/etl.py --source user_activity --aws --bucket em-datasets --chunksize 1000
+python ./scripts/etl.py --source ./input/ --chunksize 1000
 ```
 Depending on your operating system you may need to use `python3` instead of `python`, to run these commands with the right version of python.
 
@@ -103,7 +103,7 @@ class User(base.Base):
     updated = mapped_column(Boolean)        # If set to True, the record was updated
 ```
 
-In order to check for existing entries, the `email` field is used to query the database during the Transform phase.
+In order to check for existing entries, the `email` field is used to query the database during the Transform phase. This allows the ETL to run more than once or restart in case of failure without duplicating entries.
 
 ### Scalability
 
