@@ -46,7 +46,7 @@ export DB_HOST='YOUR_HOSTNAME_HERE'
 export DB_PORT='YOUR_TCP_PORT_HERE'
 ````
 
-Take into account that the projects defines default values for DB_USER, DB_HOST and DB_PORT as 'postgres', 'localhost' and 5432 respectively, so if these values matches your configuration, you only require to set up DB_PASS. Additionally, you have to create a database called `user_activity` manually. You must also run the `create_tables.py` script to create the table `users` for the first time.
+Take into account that the projects defines default values for DB_USER, DB_HOST and DB_PORT as 'postgres', 'localhost' and 5432 respectively, so if these values matches your configuration, you only require to set up DB_PASS. Additionally, you have to create a database called `user_activity` manually. You must also run the `scripts/create_tables.py` script to create the table `users` for the first time.
 
 Finally, make sure you have the dependencies installed in your environment. You can do so by runnning the following line `pip install -r requirements.txt` in Windows. Alternatively, if you are using a linux distro, execute `python3 -m pip install -r requirements_linux.txt` (or just `pip install -r requirements_linux.txt` in case you are using a virtual environment, which I highly encourage when using linux).
 
